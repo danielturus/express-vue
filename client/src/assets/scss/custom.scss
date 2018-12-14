@@ -1,0 +1,174 @@
+
+/* ========================================================================
+   Theme
+ ========================================================================== */
+
+ $sidebar-left-width: 240px;
+ $sidebar-left-width-xl: 300px;
+ 
+ // $sidebar-right-width: 0;
+ // $sidebar-right-left: 0px;
+ // $sidebar-right-left-xl: 0;
+ $sidebar-right-width: 200px;
+ $sidebar-right-left: 0px;
+ $sidebar-right-left-xl: 60px;
+ 
+ 
+ .tm-sidebar-left {
+     position: fixed;
+     top: $navbar-nav-item-height;
+     bottom: 0;
+     box-sizing: border-box;
+     width: $sidebar-left-width !important;
+     padding: 40px 40px 60px 40px;
+     border-right: 1px $global-border solid;
+     overflow: auto;
+ }
+ 
+ /*
+  * Sidebar Right
+  */
+ 
+ .tm-sidebar-right {
+     position: absolute;
+     top: 0;
+     left: calc(100% + #{$sidebar-right-left});
+     width: $sidebar-right-width;
+ }
+ 
+ /* Tablet landscape and bigger */
+ @media (min-width: $breakpoint-medium) {
+ 
+     .tm-sidebar-left+.tm-main {
+         padding-left: $sidebar-left-width;
+     }
+ 
+ }
+ 
+ /* Desktop and bigger */
+ @media (min-width: $breakpoint-large) {
+ 
+     .tm-sidebar-right {
+         left: calc(100% + #{$sidebar-right-left});
+     }
+ 
+     .tm-sidebar-left+.tm-main {
+         padding-left: $sidebar-left-width - ($sidebar-right-width + $sidebar-right-left);
+     }
+ }
+ 
+ 
+ 
+ // /* Large screen and bigger */
+ // @media (min-width: 1400px) {
+ 
+ //     .tm-sidebar-left {
+ //         width: $sidebar-left-width-xl !important;
+ //         padding: 45px 45px 60px 45px;
+ //     }
+ 
+ //     .tm-sidebar-right {
+ //         left: calc(100% + #{$sidebar-right-left-xl});
+ //     }
+ 
+ //     .tm-sidebar-left+.tm-main {
+ //         padding-left: $sidebar-left-width-xl - ($sidebar-right-width + $sidebar-right-left-xl);
+ //     }
+ 
+ // }
+ 
+ 
+ 
+ .tm-sidebar-left::-webkit-scrollbar-track {
+     // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+     // border-radius: 10px;
+     background-color: lighten($main-color, 25%);
+ }
+ 
+ .tm-sidebar-left::-webkit-scrollbar {
+     width: 0.5rem;
+ 
+     // background-color: #F5F5F5;
+ }
+ 
+ .tm-sidebar-left::-webkit-scrollbar-thumb {
+     // border-radius: 10px;
+     // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+     background-color: $main-color;
+ 
+     &:hover {
+         background-color: darken($main-color, 10%);
+     }
+ }
+ 
+ .ro-saints {
+     color: blue;
+     // color: darken($main-color, 30%);
+ 
+     &:hover {
+         color: lighten(blue, 10%)
+     }
+ }
+ 
+ .uk-text-italic {
+     font-style: italic;
+ }
+ 
+ .tm-sidebar-left li.uk-active>a {
+     position: relative;
+ }
+ 
+ .tm-sidebar-left li.uk-active>a:before {
+     content: "";
+     position: absolute;
+     top: 15px;
+     left: -25px;
+     width: 15px;
+     border-top: 2px solid #60CDFF;
+ }
+ 
+ .uk-child-width-1-7>* {
+     width: unquote('calc(100% * 1 / 7.001)');
+ }
+ 
+ 
+ 
+ 
+ // Calendar styling
+ td[colspan="3"] {
+     color:  red;
+ }
+ 
+ .uk-1-1 {
+     font-weight: bolder;
+ }
+ 
+ .uk-1-2 {
+     padding-left: 0.25rem;
+ }
+ 
+ .notes, .post {
+     font-style: italic;
+ }
+ .uk-red {
+     color: red;
+ }
+ .uk-padding-bottom-medium {
+     padding-bottom: 10px;
+ }
+ 
+ @import url('https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin-ext');
+ 
+ 
+ 
+ a.uk-invisible-hover:hover {
+     color: red;
+ }
+ 
+ .uk-calendar-table tbody tr {
+     // transition: all .4s;
+     &:hover {
+         background-color: white;
+         padding: 40px auto;
+     }
+ }
